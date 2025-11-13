@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes, FaSun, FaMoon } from "react-icons/fa";
-import logo from "../../assets/website/logo.png";
+import logo from "../../assets/logo/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {

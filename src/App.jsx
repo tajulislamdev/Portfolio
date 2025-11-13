@@ -6,7 +6,7 @@ import Skills from "./components/Skills/Skills";
 import ContactSection from "./components/ContactSection/ContactSection";
 import Footer from "./components/Footer/Footer";
 import Project from "./components/Project/Project";
-import Education from './components/Education/Education';
+import Education from "./components/Education/Education";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -34,8 +34,9 @@ const App = () => {
         <Hero handleOrderPopup={handleOrderPopup} />
       </section>
 
+      {/* ✅ এখানে handleOrderPopup পাঠানো হয়েছে */}
       <section id="about">
-        <About />
+        <About handleOrderPopup={handleOrderPopup} />
       </section>
 
       <section id="education">

@@ -44,7 +44,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#00012B] text-gray-300 pt-16 pb-8 relative overflow-hidden">
+    <footer className="bg-black text-gray-300 pt-16 pb-8 relative overflow-hidden">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/10 to-transparent blur-3xl"></div>
 
@@ -77,8 +77,8 @@ const Footer = () => {
 
           {/* Description */}
           <p className="text-gray-400 mb-4 max-w-md">
-             Thank you for visiting my portfolio! 💙 <br />
-              I truly appreciate your time — if my work inspires you, let's create
+             Thank you for visiting my portfolio!
+              I truly appreciate your time if my work inspires you,let's create
               something amazing together.
           </p>
         </motion.div>

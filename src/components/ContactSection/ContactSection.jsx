@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
@@ -11,12 +13,15 @@ const ContactSection = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",    
-        "YOUR_TEMPLATE_ID",     
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
         form.current,
-        "YOUR_PUBLIC_KEY"      
+        "YOUR_PUBLIC_KEY"
       )
       .then(
+        () => {
+          alert("✅ Message sent successfully!");
+        },
         (error) => {
           console.log(error.text);
           alert("❌ Failed to send message, please try again!");
@@ -25,10 +30,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-20 bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-all duration-300"
-    >
+    <section id="contact" className="py-20 bg-black text-white overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         {/* Header */}
         <motion.div
@@ -38,18 +40,18 @@ const ContactSection = () => {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-           <h2
-  className="text-4xl font-bold text-center mb-12"
-  style={{
-    background: 'linear-gradient(90deg, #6a11cb, #2575fc)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent'
-  }}
->
-   CONTACT ME
-</h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Have a project or idea? Let’s connect — I’d love to collaborate and build something amazing together.
+          <h2
+            className="text-4xl font-bold text-center mb-6"
+            style={{
+              background: "linear-gradient(90deg, #6a11cb, #2575fc)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            CONTACT ME
+          </h2>
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+            Have a project or idea? Let’s connect I’d love to collaborate and build something amazing together.
           </p>
         </motion.div>
 
@@ -63,7 +65,7 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="flex justify-center items-center"
           >
-            <div className="w-full max-w-sm h-[400px] bg-gray-200 dark:bg-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <div className="w-full max-w-sm h-[400px] bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
                 src={contactImg}
                 alt="Contact"
@@ -78,39 +80,39 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            className="bg-gray-900 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
           >
             <form ref={form} onSubmit={sendEmail} className="space-y-6">
               <div>
-                <label className="block mb-2 font-semibold">Name</label>
+                <label className="block mb-2 font-semibold text-gray-200">Name</label>
                 <input
                   type="text"
                   name="user_name"
                   placeholder="Enter your name"
                   required
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-900 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                  className="w-full px-4 py-2 rounded-md border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block mb-2 font-semibold">Email</label>
+                <label className="block mb-2 font-semibold text-gray-200">Email</label>
                 <input
                   type="email"
                   name="user_email"
                   placeholder="Enter your email"
                   required
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-900 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                  className="w-full px-4 py-2 rounded-md border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all"
                 />
               </div>
 
               <div>
-                <label className="block mb-2 font-semibold">Message</label>
+                <label className="block mb-2 font-semibold text-gray-200">Message</label>
                 <textarea
                   name="message"
                   placeholder="Write your message..."
                   rows="5"
                   required
-                  className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 dark:bg-gray-900 focus:ring-2 focus:ring-primary focus:outline-none transition-all resize-none"
+                  className="w-full px-4 py-2 rounded-md border border-gray-700 bg-gray-800 text-white focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all resize-none"
                 ></textarea>
               </div>
 
@@ -118,7 +120,7 @@ const ContactSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-md font-semibold shadow-md transition-all duration-300"
+                className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-md font-semibold shadow-md transition-all duration-300"
               >
                 Send Message ✉️
               </motion.button>
@@ -131,4 +133,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-

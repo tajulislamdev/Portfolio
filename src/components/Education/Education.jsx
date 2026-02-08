@@ -1,97 +1,130 @@
 "use client";
+
 import { motion } from "framer-motion";
-import { GraduationCap, BookOpen, Award, Users, School } from "lucide-react";
+import { Code2, Languages, BookOpen, School } from "lucide-react";
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, scale: 0.95 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const floatingIcon = {
+  animate: {
+    y: [0, -8, 0],
+    transition: {
+      duration: 3,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const cards = [
   {
-    icon: <GraduationCap className="w-10 h-10 text-purple-600 dark:text-purple-300" />,
-    title: "Expert Mentors",
-    desc: "Learn from industry leaders who bring real-world experience and passion for teaching.",
-    bg: "bg-purple-50 dark:bg-purple-900/30",
+    icon: Code2,
+    title: "Ahmad's Education, Dhaka",
+    desc: "Diploma in Computer Technology (MERN Stack Development).",
+    color: "from-indigo-500 to-purple-600",
+    bg: "bg-gray-900",
   },
   {
-    icon: <BookOpen className="w-10 h-10 text-indigo-600 dark:text-indigo-300" />,
-    title: "Rich Resources",
-    desc: "Access a curated collection of books, tutorials, and digital learning tools.",
-    bg: "bg-indigo-50 dark:bg-indigo-900/30",
+    icon: BookOpen,
+    title: "Nibras Academy, Bangladesh",
+    desc: "Diploma in Arabic Language and Literature.",
+    color: "from-emerald-500 to-green-600",
+    bg: "bg-gray-900",
   },
   {
-    icon: <Award className="w-10 h-10 text-green-600 dark:text-green-300" />,
-    title: "Achievements",
-    desc: "Celebrate your success with certificates and recognition as you progress.",
-    bg: "bg-green-50 dark:bg-green-900/30",
-  },
-  {
-    icon: <Users className="w-10 h-10 text-orange-600 dark:text-orange-300" />,
-    title: "Global Community",
-    desc: "Connect and collaborate with learners and educators across the world.",
-    bg: "bg-orange-50 dark:bg-orange-900/30",
+    icon: Languages,
+    title: "Ahmad's Education, Dhaka",
+    desc: "Diploma in English Language.",
+    color: "from-orange-500 to-pink-600",
+    bg: "bg-gray-900",
   },
 ];
 
-const Education = () => {
+export default function Education() {
   return (
     <section
       id="education"
-      className="relative py-24 bg-gradient-to-b from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="relative py-28 bg-black text-white overflow-hidden"
     >
-      {/* Decorative Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-[600px] h-[600px] bg-purple-300/20 dark:bg-purple-500/10 rounded-full blur-3xl -top-40 -left-40" />
-        <div className="absolute w-[400px] h-[400px] bg-indigo-300/20 dark:bg-indigo-500/10 rounded-full blur-2xl bottom-0 right-0" />
-      </div>
+      {/* Decorative Glow */}
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-purple-700/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-700/20 rounded-full blur-3xl" />
 
-      {/* Content */}
-      <div className="relative container mx-auto px-6 md:px-12">
-        {/* Heading with Icon */}
+      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="flex items-center justify-center gap-3 mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <School className="w-10 h-10 text-indigo-600 dark:text-indigo-300" />
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
-            EDUCATION 
-          </h2>
+          <div className="flex justify-center items-center gap-3">
+            <School className="w-10 h-10 text-indigo-500" />
+            <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+              EDUCATION
+            </h2>
+          </div>
+          <p className="mt-4 text-gray-300 max-w-2xl mx-auto">
+            A journey of learning across technology and languages.
+          </p>
         </motion.div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {cards.map((card, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className={`p-8 rounded-3xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2 duration-300 ${card.bg}`}
-            >
-              <div className="flex flex-col items-center text-center space-y-4">
-                <div className="p-4 rounded-full bg-white/70 dark:bg-gray-800/50 shadow-sm">
-                  {card.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-                  {card.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                  {card.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom Image Section */}
+        {/* Cards */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="mt-20 mx-auto w-full max-w-4xl overflow-hidden rounded-3xl shadow-2xl"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-12"
         >
+          {cards.map((card, i) => {
+            const Icon = card.icon;
+            return (
+              <motion.div
+                key={i}
+                variants={cardVariants}
+                whileHover={{ y: -14, scale: 1.05 }}
+                className={`relative p-10 rounded-[2rem] ${card.bg} shadow-xl hover:shadow-2xl transition-all border border-white/10`}
+              >
+                <div className="flex flex-col items-center text-center space-y-6">
+                  <motion.div
+                    variants={floatingIcon}
+                    animate="animate"
+                    className={`p-6 rounded-2xl bg-gradient-to-br ${card.color} shadow-lg`}
+                  >
+                    <Icon className="w-11 h-11 text-white" />
+                  </motion.div>
+
+                  <h3 className="text-xl font-semibold text-white">
+                    {card.title}
+                  </h3>
+
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {card.desc}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
   );
-};
-
-export default Education;
+}

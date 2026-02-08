@@ -28,19 +28,17 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="py-20 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-    >
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 bg-black text-white">
+      <div className="max-w-7xl mx-auto px-6">
+
         {/* Title Section */}
         <div className="text-center mb-12">
           <h2 className="flex items-center justify-center text-3xl sm:text-4xl font-bold mb-3 gap-2">
-            <FaLaptopCode className="text-indigo-600 dark:text-yellow-400 text-4xl" />
-            <span className="text-sky-700 dark:text-sky-400">Projects</span>
-            <span className="text-orange-800 dark:text-orange-300">Made</span>
+            <FaLaptopCode className="text-indigo-500 text-4xl" />
+            <span className="text-sky-400">Projects</span>
+            <span className="text-orange-400">Made</span>
           </h2>
-          <div className="w-16 h-1 bg-indigo-700 dark:bg-yellow-400 mx-auto rounded"></div>
+          <div className="w-16 h-1 bg-indigo-500 mx-auto rounded"></div>
         </div>
 
         {/* Projects Grid */}
@@ -48,7 +46,7 @@ const Projects = () => {
           {projectsData.map(({ id, img, title, live, code }) => (
             <div
               key={id}
-              className="relative group overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 transition-transform hover:-translate-y-2"
+              className="relative group overflow-hidden rounded-xl shadow-lg bg-gray-900 border border-gray-700 transition-transform hover:-translate-y-2"
             >
               <img
                 src={img}
@@ -57,6 +55,7 @@ const Projects = () => {
                 loading="lazy"
               />
 
+              {/* Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-4 transition duration-300">
                 <a
                   href={live}
@@ -76,7 +75,8 @@ const Projects = () => {
                 </a>
               </div>
 
-              <div className="bg-indigo-600 dark:bg-yellow-500 text-white dark:text-black font-semibold text-center py-3">
+              {/* Title */}
+              <div className="bg-indigo-600 text-white font-semibold text-center py-3">
                 {title}
               </div>
             </div>
@@ -89,7 +89,7 @@ const Projects = () => {
             href="https://github.com/tajulislamdev"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-indigo-700 dark:bg-yellow-500 text-white dark:text-black rounded-md font-semibold hover:bg-indigo-600 dark:hover:bg-yellow-400 transition inline-block"
+            className="px-6 py-3 bg-indigo-600 text-white rounded-md font-semibold hover:bg-indigo-500 transition inline-block"
           >
             View All →
           </a>

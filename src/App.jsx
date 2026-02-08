@@ -33,8 +33,6 @@ const App = () => {
       <section id="home">
         <Hero handleOrderPopup={handleOrderPopup} />
       </section>
-
-      {/* ✅ এখানে handleOrderPopup পাঠানো হয়েছে */}
       <section id="about">
         <About handleOrderPopup={handleOrderPopup} />
       </section>

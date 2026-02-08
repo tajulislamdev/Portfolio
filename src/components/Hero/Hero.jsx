@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
@@ -7,8 +8,8 @@ import HeroImage from "../../assets/images/hero.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative bg-white dark:bg-gray-950 text-gray-900 dark:text-white overflow-hidden flex items-center min-h-[90vh] py-12 sm:py-16 md:py-20 lg:py-24 transition-colors duration-500">
-      <div className="container mx-auto flex flex-col-reverse md:grid md:grid-cols-2 items-center gap-10 sm:gap-12 md:gap-16 px-4 sm:px-8 md:px-12 lg:px-16">
+    <section className="relative bg-black text-white overflow-hidden flex items-center min-h-[90vh] py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse md:grid md:grid-cols-2 items-center gap-10 sm:gap-12 md:gap-16 px-4 sm:px-8 md:px-12 lg:px-16">
 
         {/* Left Section */}
         <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-5 sm:space-y-6 md:space-y-8 mt-8 sm:mt-10 md:mt-0 w-full">
@@ -31,19 +32,19 @@ const Hero = () => {
                 }}
                 className="inline-block origin-bottom"
               >
-                <HiHandRaised className="text-3xl sm:text-4xl text-cyan-500" />
+                <HiHandRaised className="text-3xl sm:text-4xl text-cyan-400" />
               </motion.span>
 
-              <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-cyan-500">
+              <span className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-cyan-400">
                 Hi, I'm
               </span>
             </span>
 
-            <span className="text-sky-600 dark:text-sky-400 block">
+            <span className="text-sky-400 block">
               TAJUL ISLAM
             </span>
 
-            <span className="text-gray-800 dark:text-gray-100 block mt-1 text-2xl sm:text-3xl lg:text-4xl">
+            <span className="block mt-1 text-2xl sm:text-3xl lg:text-4xl text-gray-200">
               <Typewriter
                 words={["Frontend Developer"]}
                 loop
@@ -61,7 +62,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg mx-auto md:mx-0"
+            className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-lg mx-auto md:mx-0"
           >
             I build modern, performance-optimized web applications using React,
             Next.js, and TailwindCSS. I focus on creating smooth, elegant, and
@@ -79,7 +80,7 @@ const Hero = () => {
               href="https://linkedin.com/in/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl hover:text-sky-600 dark:hover:text-sky-400 transition-colors duration-300"
+              className="text-2xl text-gray-300 hover:text-sky-400 transition"
             >
               <FaLinkedin />
             </a>
@@ -87,7 +88,7 @@ const Hero = () => {
               href="https://github.com/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-300"
+              className="text-2xl text-gray-300 hover:text-white transition"
             >
               <FaGithub />
             </a>
@@ -95,7 +96,7 @@ const Hero = () => {
               href="https://twitter.com/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl hover:text-sky-500 dark:hover:text-sky-300 transition-colors duration-300"
+              className="text-2xl text-gray-300 hover:text-sky-300 transition"
             >
               <FaTwitter />
             </a>
@@ -122,7 +123,7 @@ const Hero = () => {
               alt="Tajul Islam"
               className="object-cover object-center w-full h-full rounded-3xl"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent dark:from-black/50"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           </motion.div>
         </motion.div>
       </div>
